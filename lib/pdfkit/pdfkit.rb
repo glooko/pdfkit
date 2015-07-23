@@ -34,7 +34,7 @@ class PDFKit
 
   def command(path = nil)
     args = @options.to_a.flatten.compact
-    shell_escaped_command = [executable, shell_escape_for_os(args)].join ' '
+    shell_escaped_command = [executable, '--no-stop-slow-scripts', shell_escape_for_os(args)].join ' '
 
     # In order to allow for URL parameters (e.g. https://www.google.com/search?q=pdfkit) we do
     # not escape the source. The user is responsible for ensuring that no vulnerabilities exist
